@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 99%;
+            height: 90vh;
+        }
+
+        .bulb {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 50px;
+        }
+
+        #btn {
+            padding: 10px 30px;
+            text-align: center;
+            border-radius: 10px;
+            transition: all 0.2s ease-in-out;
+            cursor: pointer;
+        }
+
+        #btn:hover {
+            padding: 10px 40px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="bulb">
+
+        <img src="./bulb off.png" id="img">
+
+        <button id="btn">Switch</button>
+
+    </div>
+
+    <script>
+
+        let btn = document.getElementById("btn");
+        let img = document.getElementById("img");
+
+        var bulbonsrc = "./bulb on.png";
+        var bulboffsrc = "./bulb off.png";
+        let isBulbOn = false;
+
+        btn.addEventListener("click", () => {
+            img.src = isBulbOn ? bulbonsrc : bulboffsrc;
+            isBulbOn = !isBulbOn;
+        });
+
+    </script>
+
+
+</body>
+
+</html>
